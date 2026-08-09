@@ -1,0 +1,699 @@
+/* GENERAL PAGE SETTINGS */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6ff;
+    color: #17213c;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    box-sizing: border-box;
+}
+
+
+.hero-content {
+    max-width: 800px;
+}
+
+
+.tag {
+    color: #4059d8;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+.hero h1 {
+    font-size: 80px;
+    margin: 20px 0 10px;
+    color: #243b8f;
+}
+
+
+.hero h2 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 0 0 20px;
+}
+
+
+.intro {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 700px;
+}
+
+
+/* PROBLEM SECTION */
+
+.problem {
+    background-color: white;
+    padding: 80px 10%;
+}
+
+
+.section-label {
+    color: #4059d8;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+.problem h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+
+.problem p {
+    max-width: 800px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* RESEARCH SECTION */
+
+.research {
+    padding: 80px 10%;
+    background-color: #f4f6ff;
+}
+
+
+.section-intro {
+    max-width: 800px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 45px;
+}
+
+
+.research-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e0e4f2;
+}
+
+
+.research-card h3 {
+    font-size: 42px;
+    color: #4059d8;
+    margin: 0 0 10px;
+}
+
+
+.research-card p {
+    margin: 0;
+    font-size: 16px;
+}
+
+
+.findings {
+    background-color: white;
+    margin-top: 40px;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+
+.findings h3 {
+    font-size: 26px;
+    margin-top: 0;
+}
+
+
+.findings li {
+    margin-bottom: 15px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* USER PERSONA */
+
+.persona {
+    padding: 80px 10%;
+    background-color: white;
+}
+
+.persona .section-intro {
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.persona-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    background-color: #f4f6ff;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #e0e4f2;
+}
+
+.persona-profile {
+    text-align: center;
+}
+
+.persona-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #4059d8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.persona-profile h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.persona-profile p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.persona-details h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #18264d;
+}
+
+.persona-details p {
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.persona-details ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.persona-details li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
+/* EMPATHY MAP */
+
+.empathy {
+    padding: 80px 10%;
+    background-color: #f4f6ff;
+}
+
+.map-container {
+    margin-top: 40px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e0e4f2;
+    text-align: center;
+}
+
+.map-container img {
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.insight {
+    margin-top: 35px;
+    background-color: white;
+    padding: 30px;
+    border-left: 5px solid #4059d8;
+    border-radius: 10px;
+}
+
+.insight h3 {
+    margin-top: 0;
+    color: #18264d;
+}
+
+.insight p {
+    line-height: 1.7;
+    color: #444;
+}
+
+
+/* USER JOURNEY */
+
+.journey {
+    padding: 80px 10%;
+    background-color: white;
+}
+
+.pain-point {
+    margin-top: 40px;
+    padding: 35px;
+    background-color: #fff4f4;
+    border-left: 5px solid #e5484d;
+    border-radius: 10px;
+}
+
+.pain-point .section-label {
+    color: #e5484d;
+}
+
+.pain-point h3 {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.pain-point p:last-child {
+    line-height: 1.7;
+    color: #444;
+    max-width: 850px;
+}
+
+
+/* USER STORIES */
+
+.stories {
+    padding: 80px 10%;
+    background-color: #f4f6ff;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.story-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #e0e4f2;
+}
+
+.story-number {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #4059d8;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.story-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #18264d;
+}
+
+.story-card p {
+    line-height: 1.7;
+    color: #444;
+}
+
+/* Give the main content comfortable side spacing */
+section {
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.research-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    padding: 25px;
+    background: #eef2ff;
+    border: 1px solid #d6ddff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(40, 70, 150, 0.10);
+    max-width: 900px;
+}
+
+.research-image img {
+    display: block;
+    width: 75%;
+    max-width: 750px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* ================================
+   MVP
+================================ */
+
+.mvp-final {
+    margin-top: 60px;
+}
+
+.mvp-intro {
+    max-width: 850px;
+    line-height: 1.7;
+    color: #4b556b;
+    margin-bottom: 32px;
+}
+
+.mvp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.mvp-card {
+    background: #ffffff;
+    border: 1px solid #dce3f5;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(50, 70, 140, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mvp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(50, 70, 140, 0.13);
+}
+
+.mvp-number {
+    display: block;
+    color: #4059d8;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.mvp-card h4 {
+    font-size: 22px;
+    color: #14244b;
+    margin: 0 0 14px 0;
+}
+
+.mvp-card p {
+    color: #4b556b;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ================================
+   DESIGN DIRECTION
+================================ */
+
+.conclusion {
+    margin-top: 80px;
+    padding: 50px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #dce3f5;
+    box-shadow: 0 8px 25px rgba(50, 70, 140, 0.07);
+}
+
+.conclusion h2 {
+    font-size: 32px;
+    color: #14244b;
+    margin: 12px 0 22px;
+}
+
+.conclusion p {
+    max-width: 850px;
+    color: #4b556b;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+/* =================================
+   SPORTSYNC — SPORTS VISUAL STYLE
+================================= */
+
+body {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(64, 89, 216, 0.10), transparent 25%),
+        radial-gradient(circle at 90% 30%, rgba(255, 120, 60, 0.08), transparent 25%),
+        #f5f7ff;
+}
+
+/* Main content sections */
+section {
+    position: relative;
+}
+
+/* Give cards a more modern app feel */
+article,
+.story-card,
+.mvp-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+article:hover,
+.story-card:hover,
+.mvp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(35, 55, 120, 0.12);
+}
+
+/* =================================
+   SPORTSYNC — THE PLAYBOOK
+================================= */
+
+.hero {
+    position: relative;
+    min-height: 520px;
+    padding: 90px 70px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(64, 89, 216, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(255, 120, 60, 0.12),
+            transparent 25%
+        ),
+        #f5f7ff;
+
+    border-radius: 0 0 35px 35px;
+}
+
+.hero .tag {
+    color: #4059d8;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.95;
+    margin: 20px 0 20px;
+    color: #14244b;
+    font-weight: 800;
+    letter-spacing: -4px;
+}
+
+.hero h1::after {
+    content: " ⚡";
+    color: #ff713f;
+}
+
+.hero h2 {
+    color: #14244b;
+}
+
+.hero .intro {
+    max-width: 720px;
+    font-size: 21px;
+    line-height: 1.7;
+    color: #4b556b;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero::before {
+    width: 180px;
+    height: 180px;
+    right: 8%;
+    top: 15%;
+    border: 25px solid rgba(64, 89, 216, 0.08);
+}
+
+.hero::after {
+    width: 90px;
+    height: 90px;
+    right: 20%;
+    bottom: 12%;
+    background: rgba(255, 113, 63, 0.10);
+}
+
+/* =================================
+   THE PLAYBOOK — RESEARCH STYLE
+================================= */
+
+.section-label {
+    color: #4059d8;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+/* Research statistic cards */
+
+.research-stat {
+    background: #ffffff;
+    border: 1px solid #dce3f5;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(50, 70, 140, 0.07);
+}
+
+/* Add a subtle sporty accent */
+
+.research-stat::before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 4px;
+    background: #ff713f;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+
+
+/* =================================
+   RESEARCH CARDS — PLAYBOOK STYLE
+================================= */
+
+.research-card {
+    position: relative;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid #dce3f5;
+    box-shadow: 0 10px 28px rgba(50, 70, 140, 0.08);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.research-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #4059d8;
+}
+
+.research-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(50, 70, 140, 0.13);
+}
+
+.research-card h3 {
+    font-size: 44px;
+    margin: 5px 0 8px;
+    color: #14244b;
+    font-weight: 800;
+}
+
+.research-card p {
+    margin: 0;
+    color: #4b556b;
+    line-height: 1.6;
+}
+
+/* =================================
+   RESEARCH INSIGHTS
+================================= */
+
+.insight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.insight-card {
+    position: relative;
+    padding: 24px;
+    background: #f8f9ff;
+    border: 1px solid #dfe4f5;
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.insight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(50, 70, 140, 0.10);
+}
+
+.insight-card span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #4059d8;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.insight-card p {
+    margin: 0;
+    line-height: 1.65;
+    color: #25345c;
+}
+
+.card-sorting-image {
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #eef2ff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(60, 80, 180, 0.12);
+}
+
+.card-sorting-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+}
+
+
+background: #eef2ff;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(60, 80, 180, 0.12);
