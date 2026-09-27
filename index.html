@@ -3,208 +3,694 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SportSync - Sports Equipment Management</title>
-    
+    <title>SportSync | Campus Sports</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-     <!-- HERO SECTION -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-    <header class="hero">
+<header class="topbar">
 
-        <div class="hero-content">
+    <div class="brand" onclick="showPage('dashboard')">
 
-            <p class="tag">SPORTSYNC — THE PLAYBOOK</p>
-
-            <h1>SportSync</h1>
-
-            <h2>Making campus sports equipment easier to access.</h2>
-
-            <p class="intro">
-                A research-driven concept for improving how students
-                find, borrow, return and report problems with sports
-                equipment on campus.
-            </p>
-
+        <div class="logo">
+            S
         </div>
 
-    </header>
-
-
-    <!-- PROBLEM SECTION -->
-
-    <section class="problem">
-
-        <div class="section-label">01 — SCOUTING THE FIELD</div>
-        <h2>The problem</h2>
-
-        <p>
-            Students who regularly participate in sports at
-            Vijaybhoomi University face difficulty accessing
-            well-maintained sports equipment.
-        </p>
-
-        <p>
-            The current borrowing process is manual, equipment
-            availability is not transparent, and damaged equipment
-            is not consistently reported or maintained.
-        </p>
-
-    </section>
-<!-- RESEARCH SECTION -->
-
-<section class="research">
-
-    <p class="section-label">02 — SCOUTING THE FIELD</p>
-
-    <h2>Listening to real users</h2>
-
-    <p class="section-intro">
-        To understand the broken experience, I interviewed students
-        who regularly use the campus sports facilities and observed
-        how equipment is currently borrowed.
-    </p>
-
-
-    <div class="research-grid">
-
-        <article class="research-card">
-
-            <h3>3</h3>
-
-            <p>Student interviews</p>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <h3>Manual</h3>
-
-            <p>Current borrowing process</p>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <h3>3+</h3>
-
-            <p>Key recurring problems</p>
-
-        </article>
+        <div>
+            <h2>SportSync</h2>
+            <span>Campus Sports Hub</span>
+        </div>
 
     </div>
 
 
-    <div class="findings">
+    <div class="header-actions">
 
-       <h3>What I heard</h3>
+        <!-- NOTIFICATIONS -->
 
-<div class="insight-grid">
+        <button
+            class="icon-btn"
+            onclick="toggleNotifications()"
+            aria-label="Notifications">
 
-    <div class="insight-card">
-        <span>01</span>
-        <p>
-            Students often cannot know whether equipment is available
-            before walking to the sports block.
-        </p>
-    </div>
+            🔔
 
-    <div class="insight-card">
-        <span>02</span>
-        <p>
-            Equipment such as squash and table-tennis rackets is
-            sometimes damaged or poorly maintained.
-        </p>
-    </div>
+        </button>
 
-    <div class="insight-card">
-        <span>03</span>
-        <p>
-            The borrowing process depends on a manual register,
-            and some students do not consistently record their borrowing.
-        </p>
-    </div>
 
-    <div class="insight-card">
-        <span>04</span>
-        <p>
-            Students want equipment availability to be visible
-            before they visit the sports block.
-        </p>
-    </div>
+        <!-- PROFILE -->
 
-</div>
+        <button
+            class="profile-button"
+            type="button"
+            onclick="openProfileSettings()"
+            aria-label="Open profile settings">
 
-</section>
+            <div
+                class="avatar"
+                id="profileAvatar">
 
-<!-- USER PERSONA -->
+                ST
 
-<section class="persona">
-
-    <p class="section-label">03 — MEET THE PLAYER</p>
-
-    <h2>Meet Ayushi</h2>
-
-    <p class="section-intro">
-        A research-based persona representing students who regularly
-        participate in campus sports and depend on borrowed equipment.
-    </p>
-
-    <div class="persona-card">
-
-        <div class="persona-profile">
-
-            <div class="persona-avatar">
-                AS
             </div>
 
-            <h3>Ayushi Shah</h3>
 
-            <p>20 years old · B.Tech Student</p>
+            <div class="profile-copy">
 
-            <p>
-                Plays badminton, squash and table tennis regularly.
+                <strong id="profileName">
+                    Student
+                </strong>
+
+                <small id="profileRole">
+                    Student
+                </small>
+
+            </div>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section
+    id="dashboard"
+    class="page active">
+
+
+    <!-- WELCOME -->
+
+    <div class="welcome-row">
+
+        <div>
+
+            <p class="eyebrow">
+                SPORTS BLOCK
+            </p>
+
+            <h1>
+                Your sports, your way.
+            </h1>
+
+            <p class="subtext">
+                Find equipment, check availability and get back to your game.
             </p>
 
         </div>
 
 
-        <div class="persona-details">
+        <div class="date-box">
 
-            <h3>About</h3>
+            <strong id="todayDate">
+                21 Sep 2026
+            </strong>
 
-            <p>
-                Ayushi is an active student who enjoys playing multiple
-                sports to stay fit and socialize with friends. She
-                regularly borrows equipment from the campus sports office
-                instead of owning equipment for every sport.
+            <span>
+                Equipment access · 5–8 PM
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NOTIFICATIONS -->
+
+    <div
+        id="notificationPanel"
+        class="notification-panel">
+
+        <strong>
+            Notifications
+        </strong>
+
+        <p>
+            🏸 2 badminton racquets are available now.
+        </p>
+
+        <p>
+            ⏰ Equipment access is from 5–8 PM, Monday–Saturday.
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROFILE MODAL
+    ================================================= -->
+
+    <div
+        id="profileModal"
+        class="profile-modal"
+        aria-hidden="true">
+
+
+        <div
+            class="profile-modal-backdrop"
+            onclick="closeProfileSettings()">
+        </div>
+
+
+        <div
+            class="profile-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="profileSettingsTitle">
+
+
+            <div class="profile-modal-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PROFILE
+                    </p>
+
+                    <h2 id="profileSettingsTitle">
+                        Personalise your profile
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    onclick="closeProfileSettings()"
+                    aria-label="Close">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+
+            <!-- NAME -->
+
+            <label class="profile-field">
+
+                <span>
+                    Name
+                </span>
+
+                <input
+                    id="profileNameInput"
+                    type="text"
+                    maxlength="40"
+                    placeholder="Enter your name">
+
+            </label>
+
+
+
+            <!-- EMAIL -->
+
+            <label class="profile-field">
+
+                <span>
+                    Email
+                </span>
+
+                <input
+                    id="profileEmailInput"
+                    type="email"
+                    maxlength="80"
+                    placeholder="student@university.edu">
+
+            </label>
+
+
+
+            <!-- THEME -->
+
+            <div class="theme-setting">
+
+                <div>
+
+                    <strong>
+                        Appearance
+                    </strong>
+
+                    <small>
+                        Choose the mode you prefer.
+                    </small>
+
+                </div>
+
+
+                <div
+                    class="theme-toggle"
+                    role="group"
+                    aria-label="Appearance mode">
+
+
+                    <button
+                        id="lightModeBtn"
+                        type="button"
+                        onclick="setTheme('light')">
+
+                        ☀ Light
+
+                    </button>
+
+
+                    <button
+                        id="darkModeBtn"
+                        type="button"
+                        onclick="setTheme('dark')">
+
+                        ☾ Dark
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MODAL BUTTONS -->
+
+            <div class="profile-modal-actions">
+
+                <button
+                    class="secondary-button"
+                    type="button"
+                    onclick="closeProfileSettings()">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    class="primary-button"
+                    type="button"
+                    onclick="saveProfileSettings()">
+
+                    Save changes
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         STATUS CARDS
+    ================================================= -->
+
+    <div class="status-grid">
+
+
+        <div class="status-card">
+
+            <div class="status-icon purple">
+                ●
+            </div>
+
+            <div>
+
+                <strong id="availableCount">
+                    20
+                </strong>
+
+                <span>
+                    Available now
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-icon green">
+                +
+            </div>
+
+            <div>
+
+                <strong>
+                    6
+                </strong>
+
+                <span>
+                    Sports
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-icon orange">
+                ⌖
+            </div>
+
+            <div>
+
+                <strong>
+                    1
+                </strong>
+
+                <span>
+                    Sports block
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <div class="status-icon blue">
+                24
+            </div>
+
+            <div>
+
+                <strong>
+                    5–8 PM
+                </strong>
+
+                <span>
+                    Mon–Sat access
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         QUICK ACTIONS
+    ================================================= -->
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                QUICK ACTIONS
+            </p>
+
+            <h2>
+                What do you want to do?
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="action-grid">
+
+
+        <button
+            class="action-card"
+            onclick="showPage('equipment')">
+
+            <div class="action-symbol">
+                +
+            </div>
+
+            <div>
+
+                <strong>
+                    Find Equipment
+                </strong>
+
+                <span>
+                    Check live availability
+                </span>
+
+            </div>
+
+            <b>
+                →
+            </b>
+
+        </button>
+
+
+
+        <button
+            class="action-card"
+            onclick="showPage('activity')">
+
+            <div class="action-symbol">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    My Activity
+                </strong>
+
+                <span>
+                    View borrowed equipment
+                </span>
+
+            </div>
+
+            <b>
+                →
+            </b>
+
+        </button>
+
+
+
+        <button
+            class="action-card"
+            onclick="showPage('damage')">
+
+            <div class="action-symbol">
+                !
+            </div>
+
+            <div>
+
+                <strong>
+                    Report Damage
+                </strong>
+
+                <span>
+                    Report an equipment issue
+                </span>
+
+            </div>
+
+            <b>
+                →
+            </b>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         POPULAR EQUIPMENT
+    ================================================= -->
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                LIVE AVAILABILITY
+            </p>
+
+            <h2>
+                Popular equipment
+            </h2>
+
+        </div>
+
+
+        <button
+            class="text-button"
+            onclick="showPage('equipment')">
+
+            View all →
+
+        </button>
+
+    </div>
+
+
+
+    <div class="equipment-preview">
+
+
+        <!-- BADMINTON -->
+
+        <div class="equipment-card">
+
+            <div class="equipment-top">
+
+                <span class="sport-label">
+                    BADMINTON
+                </span>
+
+                <span class="available-dot">
+                    Available
+                </span>
+
+            </div>
+
+
+            <div class="equipment-icon">
+                🏸
+            </div>
+
+
+            <h3>
+                Badminton Racquet
+            </h3>
+
+
+            <p id="badmintonPreview">
+                4 racquets available
             </p>
 
 
-            <h3>Goals</h3>
+            <button
+                onclick="openEquipment('Badminton Racquet')">
 
-            <ul>
-                <li>Know whether equipment is available before visiting.</li>
-                <li>Use safe and well-maintained equipment.</li>
-                <li>Spend more time playing and less time dealing with borrowing issues.</li>
-            </ul>
+                View equipment
+
+            </button>
+
+        </div>
 
 
-            <h3>Frustrations</h3>
 
-            <ul>
-                <li>Equipment is sometimes unavailable.</li>
-                <li>Some racquets are damaged or poorly maintained.</li>
-                <li>The manual register does not reliably show availability.</li>
-                <li>There is no simple way to report damaged equipment.</li>
-            </ul>
+        <!-- TABLE TENNIS -->
+
+        <div class="equipment-card">
+
+            <div class="equipment-top">
+
+                <span class="sport-label">
+                    TABLE TENNIS
+                </span>
+
+                <span class="available-dot">
+                    Available
+                </span>
+
+            </div>
+
+
+            <div class="equipment-icon">
+                🏓
+            </div>
+
+
+            <h3>
+                Table Tennis Racquet
+            </h3>
+
+
+            <p id="ttPreview">
+                4 racquets available
+            </p>
+
+
+            <button
+                onclick="openEquipment('Table Tennis Racquet')">
+
+                View equipment
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SQUASH -->
+
+        <div class="equipment-card">
+
+            <div class="equipment-top">
+
+                <span class="sport-label">
+                    SQUASH
+                </span>
+
+                <span class="limited-dot">
+                    Limited
+                </span>
+
+            </div>
+
+
+            <div class="equipment-icon">
+                🎾
+            </div>
+
+
+            <h3>
+                Squash Racquet
+            </h3>
+
+
+            <p id="squashPreview">
+                2 racquets available
+            </p>
+
+
+            <button
+                onclick="openEquipment('Squash Racquet')">
+
+                View equipment
+
+            </button>
 
         </div>
 
@@ -212,501 +698,2383 @@
 
 </section>
 
-<!-- EMPATHY MAP -->
-
-<section class="empathy">
-
-    <p class="section-label">04 — EMPATHY MAP</p>
-
-    <h2>Understanding the user's experience</h2>
-
-    <p class="section-intro">
-        The empathy map was created from the interview responses and
-        observations to understand what students say, think, do and feel
-        while trying to borrow sports equipment.
-    </p>
-
-    <div class="map-container">
-
-        <img
-            src="images/empathy map.png"
-            alt="Empathy map showing what sports equipment users say, think, do and feel"
-        >
-
-    </div>
-
-    <div class="insight">
-
-        <h3>Key insight</h3>
-
-        <p>
-            Students are not only frustrated by damaged equipment.
-            A major source of frustration is the uncertainty before
-            reaching the sports block. They want to know whether
-            suitable and usable equipment is available before making
-            the trip.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- USER JOURNEY MAP -->
-
-<section class="journey">
-
-    <p class="section-label">05 — USER JOURNEY</p>
-
-    <h2>From deciding to play to returning equipment</h2>
-
-    <p class="section-intro">
-        I mapped the experience of a student who wants to play a sport
-        and needs to borrow equipment from the campus sports office.
-        The emotion line shows how uncertainty and equipment quality
-        affect the experience.
-    </p>
-
-    <div class="map-container">
-
-        <img
-    src="images/journey map.png"
-    alt="User journey map showing the steps a student takes to borrow sports equipment"
->
-
-    </div>
 
 
-    <div class="pain-point">
+<!-- =====================================================
+     EQUIPMENT PAGE
+===================================================== -->
 
-        <p class="section-label">LOWEST POINT</p>
-
-        <h3>Core Pain Point</h3>
-
-        <p>
-            Students spend time travelling to the sports block without knowing whether equipment is available, and even after reaching it, they may receive damaged or poorly maintained equipment.                                                                        </p>
-
-    </div>
-
-</section>
+<section
+    id="equipment"
+    class="page">
 
 
-<!-- USER STORIES -->
+    <div class="page-header">
 
-<section class="stories">
+        <button
+            class="back-btn"
+            onclick="showPage('dashboard')">
 
-    <p class="section-label">06 — USER STORIES</p>
+            ←
 
-    <h2>Turning pain points into opportunities</h2>
-
-    <p class="section-intro">
-        The research findings were translated into user stories that
-        describe what students need from a better equipment borrowing
-        experience.
-    </p>
+        </button>
 
 
-    <div class="story-grid">
+        <div>
 
-        <article class="story-card">
-
-            <span class="story-number">01</span>
-
-            <h3>Check availability</h3>
-
-            <p>
-                As a student, I want to check equipment availability
-                before visiting the sports office so that I don't waste
-                time walking there if the equipment is unavailable.
+            <p class="eyebrow">
+                EQUIPMENT
             </p>
 
-        </article>
-
-
-        <article class="story-card">
-
-            <span class="story-number">02</span>
-
-            <h3>Borrow and return</h3>
+            <h1>
+                Live availability
+            </h1>
 
             <p>
-                As a student, I want to borrow and return equipment through a clear and tracked process so that I can spend less time dealing with borrowing issues.          
-    </p>
-
-        </article>
-
-
-        <article class="story-card">
-
-            <span class="story-number">03</span>
-
-            <h3>Report damage</h3>
-
-            <p>
-                As a student, I want to report damaged equipment so
-                that the sports office can identify and maintain
-                equipment regularly.
+                Check what's available before visiting the sports block.
             </p>
 
-        </article>
+        </div>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <span>
+            ⌕
+        </span>
+
+        <input
+            type="text"
+            id="equipmentSearch"
+            placeholder="Search equipment..."
+            oninput="filterEquipment()">
+
+    </div>
+
+
+
+    <!-- FILTERS -->
+
+    <div class="filter-row">
+
+        <button
+            class="filter active"
+            onclick="filterSport('all', this)">
+
+            All
+
+        </button>
+
+
+        <button
+            class="filter"
+            onclick="filterSport('badminton', this)">
+
+            Badminton
+
+        </button>
+
+
+        <button
+            class="filter"
+            onclick="filterSport('tt', this)">
+
+            Table Tennis
+
+        </button>
+
+
+        <button
+            class="filter"
+            onclick="filterSport('squash', this)">
+
+            Squash
+
+        </button>
+
+
+        <button
+            class="filter"
+            onclick="filterSport('team', this)">
+
+            Team Sports
+
+        </button>
+
+    </div>
+
+
+
+    <!-- EQUIPMENT LIST -->
+
+    <div
+        id="equipmentList"
+        class="equipment-list">
+
+
+        <!-- BADMINTON -->
+
+        <div
+            class="equipment-row"
+            data-sport="badminton"
+            data-name="Badminton Racquet">
+
+            <div class="row-icon">
+                🏸
+            </div>
+
+
+            <div class="equipment-info">
+
+                <strong>
+                    Badminton Racquet
+                </strong>
+
+                <span>
+                    Badminton · Racquet
+                </span>
+
+            </div>
+
+
+            <div class="availability">
+
+                <strong id="badmintonAvailable">
+                    4
+                </strong>
+
+                <span>
+                    available
+                </span>
+
+            </div>
+
+
+            <button
+                onclick="openEquipment('Badminton Racquet')">
+
+                Details
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TABLE TENNIS -->
+
+        <div
+            class="equipment-row"
+            data-sport="tt"
+            data-name="Table Tennis Racquet">
+
+            <div class="row-icon">
+                🏓
+            </div>
+
+
+            <div class="equipment-info">
+
+                <strong>
+                    Table Tennis Racquet
+                </strong>
+
+                <span>
+                    Table Tennis · Racquet
+                </span>
+
+            </div>
+
+
+            <div class="availability">
+
+                <strong id="ttAvailable">
+                    4
+                </strong>
+
+                <span>
+                    available
+                </span>
+
+            </div>
+
+
+            <button
+                onclick="openEquipment('Table Tennis Racquet')">
+
+                Details
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SQUASH -->
+
+        <div
+            class="equipment-row"
+            data-sport="squash"
+            data-name="Squash Racquet">
+
+            <div class="row-icon">
+                🎾
+            </div>
+
+
+            <div class="equipment-info">
+
+                <strong>
+                    Squash Racquet
+                </strong>
+
+                <span>
+                    Squash · Racquet
+                </span>
+
+            </div>
+
+
+            <div class="availability limited">
+
+                <strong id="squashAvailable">
+                    2
+                </strong>
+
+                <span>
+                    available
+                </span>
+
+            </div>
+
+
+            <button
+                onclick="openEquipment('Squash Racquet')">
+
+                Details
+
+            </button>
+
+        </div>
+
+
+
+        <!-- FOOTBALL -->
+
+        <div
+            class="equipment-row"
+            data-sport="team"
+            data-name="Football">
+
+            <div class="row-icon">
+                ⚽
+            </div>
+
+
+            <div class="equipment-info">
+
+                <strong>
+                    Football
+                </strong>
+
+                <span>
+                    Football · Ball
+                </span>
+
+            </div>
+
+
+            <div class="availability">
+
+                <strong id="footballAvailable">
+                    3
+                </strong>
+
+                <span>
+                    available
+                </span>
+
+            </div>
+
+
+            <button
+                onclick="openEquipment('Football')">
+
+                Details
+
+            </button>
+
+        </div>
+
+
+
+        <!-- VOLLEYBALL -->
+
+        <div
+            class="equipment-row"
+            data-sport="team"
+            data-name="Volleyball">
+
+            <div class="row-icon">
+                🏐
+            </div>
+
+
+            <div class="equipment-info">
+
+                <strong>
+                    Volleyball
+                </strong>
+
+                <span>
+                    Volleyball · Ball
+                </span>
+
+            </div>
+
+
+            <div class="availability">
+
+                <strong id="volleyballAvailable">
+                    3
+                </strong>
+
+                <span>
+                    available
+                </span>
+
+            </div>
+
+
+            <button
+                onclick="openEquipment('Volleyball')">
+
+                Details
+
+            </button>
+
+        </div>
+
+
+
+        <!-- BASKETBALL -->
+
+        <div
+            class="equipment-row"
+            data-sport="team"
+            data-name="Basketball">
+
+            <div class="row-icon">
+                🏀
+            </div>
+
+
+            <div class="equipment-info">
+
+                <strong>
+                    Basketball
+                </strong>
+
+                <span>
+                    Basketball · Ball
+                </span>
+
+            </div>
+
+
+            <div class="availability">
+
+                <strong id="basketballAvailable">
+                    4
+                </strong>
+
+                <span>
+                    available
+                </span>
+
+            </div>
+
+
+            <button
+                onclick="openEquipment('Basketball')">
+
+                Details
+
+            </button>
+
+        </div>
 
     </div>
 
 </section>
 
-</section>
 
 
-<!-- STEP 07 — CARD SORTING -->
-<section class="card-sorting-section">
+<!-- =====================================================
+     EQUIPMENT DETAILS
+===================================================== -->
 
-    <div class="section-label">07 — CARD SORTING</div>
+<section
+    id="details"
+    class="page">
 
-    <h2>Understanding how users group information</h2>
 
-    <p class="section-intro">
-        I conducted a card-sorting activity with students to understand
-        how they naturally grouped sports-equipment features. The results
-        helped identify clear groupings as well as features and labels
-        that caused confusion.
-    </p>
+    <div class="page-header">
 
+        <button
+            class="back-btn"
+            onclick="showPage('equipment')">
 
-    <!-- Card Sorting Image -->
-    <div class="card-sorting-image">
-       <img src="./images/card-sorting.png" alt="Card sorting">    </div>
+            ←
 
+        </button>
 
-    <!-- Findings -->
-    <div class="sorting-findings">
 
-    <div class="finding-card">
-        <span class="finding-number">01</span>
+        <div>
 
-        <h3>Clear alert grouping</h3>
-
-        <p>
-            Notifications and Due Date Reminder were grouped together
-            under Alerts & Notifications, showing a clear relationship
-            between these features.
-        </p>
-    </div>
-
-
-    <div class="finding-card">
-        <span class="finding-number">02</span>
-
-        <h3>Equipment-related features</h3>
-
-        <p>
-            Borrow Equipment, Equipment Details, Equipment Condition,
-            Reservation, Waitlist and Lost Equipment were grouped around
-            the equipment-borrowing experience.
-        </p>
-    </div>
-
-
-    <div class="finding-card">
-        <span class="finding-number">03</span>
-
-        <h3>Activity and dashboard features</h3>
-
-        <p>
-            Return Equipment and Borrow History were grouped under
-            My Activity, while Search, Live Availability, Filter by Sport,
-            Maintenance Status and Usage Analytics were placed under
-            Dashboard.
-        </p>
-    </div>
-
-</div>
-
-    </div>
-
-
-    <!-- Research Insight -->
-    <div class="research-insight">
-
-    <h3>What this changed</h3>
-
-    <p>
-        The card-sorting results provided the basis for the first
-        Information Architecture. The most consistent groupings were
-        used to organize features into Dashboard, Equipment, My Activity,
-        Alerts & Notifications and Help. This structure was then tested
-        through tree testing to identify navigation problems.
-    </p>
-
-</div></section>
-
-<!-- Information Architecture -->
-<section class="section">
-    <div class="section-number">08 — INFORMATION ARCHITECTURE</div>
-
-    <h2>Organizing the Sportsync experience</h2>
-
-    <p class="section-intro">
-        Based on the card-sorting results, the features were organized
-        into clear categories that match how students expect to find
-        and use sports equipment services.
-    </p>
-
-    <div class="research-image">
-        <img src="images/IA1.png"
-             alt="Sportsync Information Architecture">
-    </div>
-
-   <div class="insight-box">
-    <h3>Key IA decisions</h3>
-
-    <p>
-        The Information Architecture was designed around the patterns
-        identified during card sorting. Features were grouped into five
-        main areas: Dashboard, Equipment, My Activity, Alerts &
-        Notifications, and Help. This structure keeps availability and
-        discovery features easy to access while separating borrowing,
-        personal activity, alerts and support functions.
-    </p>
-</div>
-</section>
-
-<!-- Tree Testing -->
-<section class="section">
-    <div class="section-number">09 — TREE TESTING</div>
-
-    <h2>Testing whether users could find features</h2>
-
-    <p class="section-intro">
-        The Information Architecture was tested through five navigation
-        tasks to identify where users could successfully find features
-        and where the structure caused confusion.
-    </p>
-
-    <div class="research-image">
-        <img src="images/tree testing result.png"
-             alt="Tree testing results showing task success rates">
-    </div>
-
-    <div class="insight-box">
-        <h3>What the test revealed</h3>
-
-        <p>
-            The tree test achieved an overall success rate of 64%, with
-            16 out of 25 tasks completed successfully. Damage Report and
-            Borrow History had the strongest results, with 100% task
-            success. Live Availability, Reservation and Due Date Reminder
-            each had a 40% success rate, showing that these features were
-            harder for users to locate.
-        </p>
-    </div>
-</section>
-
-
-<!-- MVP Prioritization -->
-<section class="section">
-    <div class="section-number">10 — MVP PRIORITIZATION</div>
-
-    <h2>Prioritizing what matters most</h2>
-
-    <p class="section-intro">
-        The features were prioritized using MoSCoW prioritization and a
-        Desirability, Feasibility and Viability (DFV) matrix to identify
-        the features that should form the first version of SportSync.
-    </p>
-
-    <div class="research-image">
-        <img src="images/moscow.png"
-             alt="MoSCoW prioritization of SportSync features">
-    </div>
-
-    <!-- DFV MATRIX -->
-
-<div class="dfv-section">
-
-    <h3>DFV Matrix</h3>
-
-    <p>
-        The two features debated most strongly for the final MVP were
-        Live Availability and Damage Report. To make the decision
-        objective, the features were evaluated using Desirability,
-        Feasibility and Viability on a scale of 1–5.
-    </p>
-
-
-    <div class="dfv-table-wrapper">
-
-        <table class="dfv-table">
-
-            <thead>
-
-                <tr>
-                    <th>Feature</th>
-                    <th>Desirability</th>
-                    <th>Feasibility</th>
-                    <th>Viability</th>
-                    <th>Total</th>
-                </tr>
-
-            </thead>
-
-
-            <tbody>
-
-                <tr>
-                    <td><strong>Live Availability</strong></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td><strong>15 / 15</strong></td>
-                </tr>
-
-
-                <tr>
-                    <td><strong>Borrow & Return</strong></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td><strong>15 / 15</strong></td>
-                </tr>
-
-
-                <tr>
-                    <td><strong>Damage Report</strong></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td><strong>15 / 15</strong></td>
-                </tr>
-
-
-                <tr>
-                    <td><strong>Reservation</strong></td>
-                    <td>4</td>
-                    <td>4</td>
-                    <td>4</td>
-                    <td><strong>12 / 15</strong></td>
-                </tr>
-
-
-                <tr>
-                    <td><strong>Due Date Reminder</strong></td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>4</td>
-                    <td><strong>13 / 15</strong></td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-
-    <div class="dfv-conclusion">
-
-        <h4>MVP decision</h4>
-
-        <p>
-            Live Availability, Borrow & Return and Damage Report scored
-            highest because they directly address the core problems found
-            during research. These features therefore form the foundation
-            of the SportSync MVP.
-        </p>
-
-    </div>
-
-</div>
-    <div class="insight-box">
-        <h3>MVP focus</h3>
-
-        <p>
-            The MVP focuses on the features that directly address the
-            biggest problems identified during research: checking
-            equipment availability, borrowing and returning equipment,
-            and reporting damaged equipment. These features provide the
-            core value of SportSync without adding unnecessary complexity
-            to the first version.
-        </p>
-    </div>
-
-<!-- MVP -->
-
-<div class="mvp-final">
-
-    <div class="section-label">06 — MVP</div>
-
-    <h3>MVP Features</h3>
-
-    <p class="mvp-intro">
-        Based on the research and prioritization, these four features form
-        the core of the SportSync experience.
-    </p>
-
-    <div class="mvp-grid">
-
-        <article class="mvp-card">
-            <span class="mvp-number">01</span>
-            <h4>Live Availability</h4>
-            <p>
-                Students can know whether equipment is available before
-                travelling to the sports block.
+            <p class="eyebrow">
+                EQUIPMENT DETAILS
             </p>
-        </article>
 
-        <article class="mvp-card">
-            <span class="mvp-number">02</span>
-            <h4>Borrow Equipment</h4>
-            <p>
-                Students can record their equipment borrowing through
-                a clear and trackable process.
-            </p>
-        </article>
+            <h1 id="detailName">
+                Table Tennis Racquet
+            </h1>
 
-        <article class="mvp-card">
-            <span class="mvp-number">03</span>
-            <h4>Return Equipment</h4>
-            <p>
-                Equipment returns can be recorded so that the sports
-                office knows what is currently borrowed.
+            <p id="detailCategory">
+                Table Tennis · Racquet
             </p>
-        </article>
 
-        <article class="mvp-card">
-            <span class="mvp-number">04</span>
-            <h4>Damage Report</h4>
-            <p>
-                Students can report damaged equipment so the sports
-                office can identify items that need maintenance.
-            </p>
-        </article>
+        </div>
 
     </div>
 
-</div>
+
+
+    <div class="detail-layout">
+
+
+        <div class="detail-visual">
+
+            <span id="detailEmoji">
+                🏓
+            </span>
+
+        </div>
+
+
+
+        <div class="detail-card">
+
+
+            <div class="detail-status">
+
+                <span
+                    id="detailStatus"
+                    class="available-dot">
+
+                    ● Available
+
+                </span>
+
+
+                <strong id="detailAvailability">
+                    4 available
+                </strong>
+
+            </div>
+
+
+
+            <div class="detail-line">
+
+                <span>
+                    Condition
+                </span>
+
+                <strong>
+                    Good
+                </strong>
+
+            </div>
+
+
+            <div class="detail-line">
+
+                <span>
+                    Location
+                </span>
+
+                <strong>
+                    Sports Block
+                </strong>
+
+            </div>
+
+
+            <div class="detail-line">
+
+                <span>
+                    Borrow duration
+                </span>
+
+                <strong>
+                    Up to 2 hours
+                </strong>
+
+            </div>
+
+
+            <button
+                id="borrowButton"
+                class="primary-button"
+                onclick="goToBorrow()">
+
+                Borrow Equipment
+
+            </button>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- CONCLUSION -->
 
-<section class="conclusion">
 
-    <div class="section-label">07 — DESIGN DIRECTION</div>
+<!-- =====================================================
+     BORROW
+===================================================== -->
 
-    <h2>From research to a focused solution</h2>
+<section
+    id="borrow"
+    class="page">
 
-    <p>
-        The research showed that the biggest issue is not simply access
-        to sports equipment, but the uncertainty surrounding its
-        availability, condition and borrowing process.
-    </p>
 
-    <p>
-        SportSync addresses these problems by making equipment
-        availability visible, borrowing and returning trackable,
-        and damaged equipment easier to report.
-    </p>
+    <div class="page-header">
+
+        <button
+            class="back-btn"
+            onclick="showPage('details')">
+
+            ←
+
+        </button>
+
+
+        <div>
+
+            <p class="eyebrow">
+                BORROW EQUIPMENT
+            </p>
+
+            <h1>
+                Borrow
+                <span id="borrowName">
+                    Table Tennis Racquet
+                </span>
+            </h1>
+
+            <p>
+                Confirm the details before borrowing.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <form
+        id="borrowForm"
+        class="form-card">
+
+
+        <label>
+
+            Quantity
+
+            <select id="quantity">
+
+                <option value="1">
+                    1 item
+                </option>
+
+                <option value="2">
+                    2 items
+                </option>
+
+            </select>
+
+        </label>
+
+
+
+        <label>
+
+            Return date
+
+            <input
+                type="date"
+                id="returnDate"
+                required>
+
+        </label>
+
+
+
+        <div class="condition-box">
+
+            <strong>
+                Equipment condition
+            </strong>
+
+            <p>
+                Please confirm that you checked the equipment before borrowing.
+            </p>
+
+
+            <label class="checkbox">
+
+                <input
+                    type="checkbox"
+                    id="conditionCheck"
+                    required>
+
+                <span>
+                    I confirm the equipment is in good condition.
+                </span>
+
+            </label>
+
+        </div>
+
+
+
+        <button
+            class="primary-button"
+            type="submit">
+
+            Confirm Borrowing
+
+        </button>
+
+    </form>
 
 </section>
+
+
+
+<!-- =====================================================
+     BORROW SUCCESS
+===================================================== -->
+
+<section
+    id="success"
+    class="page">
+
+
+    <div class="success-card">
+
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <p class="eyebrow">
+            BORROW CONFIRMED
+        </p>
+
+
+        <h1>
+            You're all set!
+        </h1>
+
+
+        <p>
+
+            <strong id="successItem">
+                Table Tennis Racquet
+            </strong>
+
+            has been added to your activity.
+
+        </p>
+
+
+
+        <div class="success-info">
+
+
+            <div>
+
+                <span>
+                    Return by
+                </span>
+
+                <strong id="successDate">
+                    Today
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Status
+                </span>
+
+                <strong>
+                    Borrowed
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <button
+            class="primary-button"
+            onclick="showPage('activity')">
+
+            View My Activity
+
+        </button>
+
+
+        <button
+            class="secondary-button"
+            onclick="showPage('equipment')">
+
+            Continue Browsing
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ACTIVITY
+===================================================== -->
+
+<section
+    id="activity"
+    class="page">
+
+
+    <div class="page-header">
+
+        <div>
+
+            <p class="eyebrow">
+                MY ACTIVITY
+            </p>
+
+            <h1>
+                Your borrowed equipment
+            </h1>
+
+            <p>
+                Keep track of what you currently have.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="activityList">
+
+
+        <div
+            class="activity-card"
+            id="borrowedItem">
+
+
+            <div
+                class="row-icon"
+                id="activityIcon">
+
+                🏓
+
+            </div>
+
+
+            <div class="activity-info">
+
+                <strong id="activityName">
+                    Table Tennis Racquet
+                </strong>
+
+                <span id="activityStatus">
+                    Borrowed · Return today
+                </span>
+
+            </div>
+
+
+            <button
+                onclick="showPage('return')">
+
+                Return
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RETURN
+===================================================== -->
+
+<section
+    id="return"
+    class="page">
+
+
+    <div class="page-header">
+
+        <button
+            class="back-btn"
+            onclick="showPage('activity')">
+
+            ←
+
+        </button>
+
+
+        <div>
+
+            <p class="eyebrow">
+                RETURN EQUIPMENT
+            </p>
+
+            <h1>
+                Return equipment
+            </h1>
+
+            <p>
+                Tell us about the condition before returning it.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <form
+        id="returnForm"
+        class="form-card">
+
+
+        <div class="selected-equipment">
+
+            <span id="returnIcon">
+                🏓
+            </span>
+
+            <div>
+
+                <strong id="returnEquipmentName">
+                    Table Tennis Racquet
+                </strong>
+
+                <small>
+                    Currently borrowed
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <label>
+
+            Equipment condition
+
+            <select id="returnCondition">
+
+                <option value="Good">
+                    Good condition
+                </option>
+
+                <option value="Damaged">
+                    Damaged
+                </option>
+
+            </select>
+
+        </label>
+
+
+
+        <label>
+
+            Additional note
+
+            <textarea
+                id="returnNote"
+                placeholder="Anything we should know?"></textarea>
+
+        </label>
+
+
+
+        <button
+            class="primary-button"
+            type="submit">
+
+            Confirm Return
+
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- =====================================================
+     DAMAGE REPORT
+===================================================== -->
+
+<section
+    id="damage"
+    class="page">
+
+
+    <div class="page-header">
+
+        <div>
+
+            <p class="eyebrow">
+                REPORT
+            </p>
+
+            <h1>
+                Report equipment damage
+            </h1>
+
+            <p>
+                Help us keep campus equipment safe and usable.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <form
+        id="damageForm"
+        class="form-card">
+
+
+        <label>
+
+            Equipment
+
+            <select id="damageEquipment">
+
+                <option>
+                    Table Tennis Racquet
+                </option>
+
+                <option>
+                    Badminton Racquet
+                </option>
+
+                <option>
+                    Squash Racquet
+                </option>
+
+                <option>
+                    Football
+                </option>
+
+                <option>
+                    Volleyball
+                </option>
+
+                <option>
+                    Basketball
+                </option>
+
+            </select>
+
+        </label>
+
+
+
+        <label>
+
+            Damage severity
+
+            <select id="damageSeverity">
+
+                <option value="">
+                    Select severity
+                </option>
+
+                <option>
+                    Minor
+                </option>
+
+                <option>
+                    Moderate
+                </option>
+
+                <option>
+                    Severe
+                </option>
+
+            </select>
+
+        </label>
+
+
+
+        <label>
+
+            Describe the damage
+
+            <textarea
+                id="damageDescription"
+                placeholder="Example: Handle is loose..."></textarea>
+
+        </label>
+
+
+
+        <label>
+
+            Add photo
+
+            <div class="upload-box">
+
+                <input
+                    type="file"
+                    id="damagePhoto"
+                    accept="image/*">
+
+                <span>
+                    ＋ Add a photo
+                </span>
+
+                <small>
+                    Optional
+                </small>
+
+            </div>
+
+        </label>
+
+
+
+        <button
+            class="primary-button"
+            type="submit">
+
+            Submit Damage Report
+
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- =====================================================
+     DAMAGE SUCCESS
+===================================================== -->
+
+<section
+    id="damageSuccess"
+    class="page">
+
+
+    <div class="success-card">
+
+
+        <div class="success-icon warning">
+            !
+        </div>
+
+
+        <p class="eyebrow">
+            REPORT SUBMITTED
+        </p>
+
+
+        <h1>
+            Thanks for reporting it.
+        </h1>
+
+
+        <p>
+            The sports office has received your damage report.
+        </p>
+
+
+        <div class="report-number">
+
+            Report ID:
+            <strong id="reportId">
+                SS-1042
+            </strong>
+
+        </div>
+
+
+        <button
+            class="primary-button"
+            onclick="showPage('dashboard')">
+
+            Back to Dashboard
+
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     BOTTOM NAVIGATION
+===================================================== -->
+
+<nav class="bottom-nav">
+
+
+    <button
+        onclick="showPage('dashboard')"
+        class="nav-item active">
+
+        <span>
+            ⌂
+        </span>
+
+        Home
+
+    </button>
+
+
+    <button
+        onclick="showPage('equipment')"
+        class="nav-item">
+
+        <span>
+            ⌕
+        </span>
+
+        Equipment
+
+    </button>
+
+
+    <button
+        onclick="showPage('activity')"
+        class="nav-item">
+
+        <span>
+            ✓
+        </span>
+
+        Activity
+
+    </button>
+
+
+    <button
+        onclick="showPage('damage')"
+        class="nav-item">
+
+        <span>
+            !
+        </span>
+
+        Report
+
+    </button>
+
+</nav>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   EQUIPMENT DATA
+===================================================== */
+
+let currentEquipment = "Table Tennis Racquet";
+
+let borrowedQuantity = 1;
+
+let equipmentAvailability = {
+
+    "Badminton Racquet": 4,
+
+    "Table Tennis Racquet": 4,
+
+    "Squash Racquet": 2,
+
+    "Football": 3,
+
+    "Volleyball": 3,
+
+    "Basketball": 4
+
+};
+
+
+const equipmentInfo = {
+
+    "Badminton Racquet": {
+        emoji: "🏸",
+        category: "Badminton · Racquet"
+    },
+
+    "Table Tennis Racquet": {
+        emoji: "🏓",
+        category: "Table Tennis · Racquet"
+    },
+
+    "Squash Racquet": {
+        emoji: "🎾",
+        category: "Squash · Racquet"
+    },
+
+    "Football": {
+        emoji: "⚽",
+        category: "Football · Ball"
+    },
+
+    "Volleyball": {
+        emoji: "🏐",
+        category: "Volleyball · Ball"
+    },
+
+    "Basketball": {
+        emoji: "🏀",
+        category: "Basketball · Ball"
+    }
+
+};
+
+
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function showPage(pageId) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+
+    const page =
+        document.getElementById(pageId);
+
+
+    if (page) {
+
+        page.classList.add("active");
+
+    }
+
+
+    document
+        .querySelectorAll(".nav-item")
+        .forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+
+    const navItems =
+        document.querySelectorAll(".nav-item");
+
+
+    if (pageId === "dashboard") {
+
+        navItems[0].classList.add("active");
+
+    }
+
+
+    if (
+        pageId === "equipment" ||
+        pageId === "details" ||
+        pageId === "borrow" ||
+        pageId === "success"
+    ) {
+
+        navItems[1].classList.add("active");
+
+    }
+
+
+    if (
+        pageId === "activity" ||
+        pageId === "return"
+    ) {
+
+        navItems[2].classList.add("active");
+
+    }
+
+
+    if (
+        pageId === "damage" ||
+        pageId === "damageSuccess"
+    ) {
+
+        navItems[3].classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* =====================================================
+   EQUIPMENT DETAILS
+===================================================== */
+
+function openEquipment(name) {
+
+    currentEquipment = name;
+
+
+    const info =
+        equipmentInfo[name];
+
+
+    const available =
+        equipmentAvailability[name] || 0;
+
+
+    document.getElementById(
+        "detailName"
+    ).textContent = name;
+
+
+    document.getElementById(
+        "borrowName"
+    ).textContent = name;
+
+
+    document.getElementById(
+        "detailCategory"
+    ).textContent = info.category;
+
+
+    document.getElementById(
+        "detailEmoji"
+    ).textContent = info.emoji;
+
+
+    document.getElementById(
+        "detailAvailability"
+    ).textContent =
+        available + " available";
+
+
+    const borrowButton =
+        document.getElementById(
+            "borrowButton"
+        );
+
+
+    if (available <= 0) {
+
+        borrowButton.disabled = true;
+
+        borrowButton.textContent =
+            "Currently unavailable";
+
+        borrowButton.classList.add(
+            "disabled-button"
+        );
+
+    } else {
+
+        borrowButton.disabled = false;
+
+        borrowButton.textContent =
+            "Borrow Equipment";
+
+        borrowButton.classList.remove(
+            "disabled-button"
+        );
+
+    }
+
+
+    showPage("details");
+
+}
+
+
+
+/* =====================================================
+   GO TO BORROW
+===================================================== */
+
+function goToBorrow() {
+
+    if (
+        equipmentAvailability[currentEquipment] <= 0
+    ) {
+
+        showToast(
+            "This equipment is currently unavailable."
+        );
+
+        return;
+    }
+
+
+    document.getElementById(
+        "borrowName"
+    ).textContent =
+        currentEquipment;
+
+
+    document.getElementById(
+        "quantity"
+    ).value = "1";
+
+
+    document.getElementById(
+        "conditionCheck"
+    ).checked = false;
+
+
+    showPage("borrow");
+
+}
+
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function filterEquipment() {
+
+    const search =
+        document
+            .getElementById("equipmentSearch")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    document
+        .querySelectorAll(".equipment-row")
+        .forEach(row => {
+
+            const name =
+                row.dataset.name.toLowerCase();
+
+
+            row.style.display =
+                name.includes(search)
+                    ? "grid"
+                    : "none";
+
+        });
+
+}
+
+
+
+/* =====================================================
+   SPORT FILTER
+===================================================== */
+
+function filterSport(
+    sport,
+    button
+) {
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    document
+        .querySelectorAll(".equipment-row")
+        .forEach(row => {
+
+            if (
+                sport === "all" ||
+                row.dataset.sport === sport
+            ) {
+
+                row.style.display = "grid";
+
+            } else {
+
+                row.style.display = "none";
+
+            }
+
+        });
+
+}
+
+
+
+/* =====================================================
+   UPDATE ALL AVAILABILITY UI
+===================================================== */
+
+function updateAvailabilityUI() {
+
+    const total =
+        Object.values(
+            equipmentAvailability
+        ).reduce(
+            (sum, value) => sum + value,
+            0
+        );
+
+
+    document.getElementById(
+        "availableCount"
+    ).textContent = total;
+
+
+    const ids = {
+
+        "Badminton Racquet":
+            "badmintonAvailable",
+
+        "Table Tennis Racquet":
+            "ttAvailable",
+
+        "Squash Racquet":
+            "squashAvailable",
+
+        "Football":
+            "footballAvailable",
+
+        "Volleyball":
+            "volleyballAvailable",
+
+        "Basketball":
+            "basketballAvailable"
+
+    };
+
+
+    Object.keys(ids).forEach(name => {
+
+        const element =
+            document.getElementById(
+                ids[name]
+            );
+
+
+        if (element) {
+
+            element.textContent =
+                equipmentAvailability[name];
+
+        }
+
+    });
+
+
+    document.getElementById(
+        "badmintonPreview"
+    ).textContent =
+        equipmentAvailability[
+            "Badminton Racquet"
+        ] + " racquets available";
+
+
+    document.getElementById(
+        "ttPreview"
+    ).textContent =
+        equipmentAvailability[
+            "Table Tennis Racquet"
+        ] + " racquets available";
+
+
+    document.getElementById(
+        "squashPreview"
+    ).textContent =
+        equipmentAvailability[
+            "Squash Racquet"
+        ] + " racquets available";
+
+}
+
+
+
+/* =====================================================
+   BORROW
+===================================================== */
+
+document
+    .getElementById("borrowForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const quantity =
+                parseInt(
+                    document.getElementById(
+                        "quantity"
+                    ).value
+                );
+
+
+            const condition =
+                document.getElementById(
+                    "conditionCheck"
+                ).checked;
+
+
+            if (!condition) {
+
+                showToast(
+                    "Please confirm the equipment condition."
+                );
+
+                return;
+            }
+
+
+            if (
+                equipmentAvailability[
+                    currentEquipment
+                ] < quantity
+            ) {
+
+                showToast(
+                    "Not enough equipment available."
+                );
+
+                return;
+            }
+
+
+            equipmentAvailability[
+                currentEquipment
+            ] -= quantity;
+
+
+            borrowedQuantity =
+                quantity;
+
+
+            updateAvailabilityUI();
+
+
+            document.getElementById(
+                "successItem"
+            ).textContent =
+                quantity +
+                " × " +
+                currentEquipment;
+
+
+            document.getElementById(
+                "successDate"
+            ).textContent =
+                formatDate(
+                    document.getElementById(
+                        "returnDate"
+                    ).value
+                );
+
+
+            updateActivity();
+
+
+            showPage("success");
+
+
+            showToast(
+                "Equipment borrowed successfully!"
+            );
+
+        }
+    );
+
+
+
+/* =====================================================
+   ACTIVITY
+===================================================== */
+
+function updateActivity() {
+
+    const info =
+        equipmentInfo[
+            currentEquipment
+        ];
+
+
+    document.getElementById(
+        "activityName"
+    ).textContent =
+        borrowedQuantity +
+        " × " +
+        currentEquipment;
+
+
+    document.getElementById(
+        "activityIcon"
+    ).textContent =
+        info.emoji;
+
+
+    document.getElementById(
+        "activityStatus"
+    ).textContent =
+        "Borrowed · Return today";
+
+
+    document.getElementById(
+        "returnEquipmentName"
+    ).textContent =
+        currentEquipment;
+
+
+    document.getElementById(
+        "returnIcon"
+    ).textContent =
+        info.emoji;
+
+}
+
+
+
+/* =====================================================
+   RETURN
+===================================================== */
+
+document
+    .getElementById("returnForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const condition =
+                document.getElementById(
+                    "returnCondition"
+                ).value;
+
+
+            equipmentAvailability[
+                currentEquipment
+            ] += borrowedQuantity;
+
+
+            updateAvailabilityUI();
+
+
+            if (
+                condition === "Damaged"
+            ) {
+
+                document.getElementById(
+                    "damageEquipment"
+                ).value =
+                    currentEquipment;
+
+
+                showToast(
+                    "Returned. Please submit a damage report."
+                );
+
+
+                showPage("damage");
+
+            } else {
+
+                showToast(
+                    "Equipment returned successfully!"
+                );
+
+
+                showPage("activity");
+
+            }
+
+        }
+    );
+
+
+
+/* =====================================================
+   DAMAGE REPORT
+===================================================== */
+
+document
+    .getElementById("damageForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const severity =
+                document.getElementById(
+                    "damageSeverity"
+                ).value;
+
+
+            const description =
+                document.getElementById(
+                    "damageDescription"
+                ).value.trim();
+
+
+            if (!severity) {
+
+                showToast(
+                    "Please select damage severity."
+                );
+
+                return;
+            }
+
+
+            if (!description) {
+
+                showToast(
+                    "Please describe the damage."
+                );
+
+                return;
+            }
+
+
+            const randomNumber =
+                Math.floor(
+                    1000 +
+                    Math.random() * 8999
+                );
+
+
+            document.getElementById(
+                "reportId"
+            ).textContent =
+                "SS-" + randomNumber;
+
+
+            showPage(
+                "damageSuccess"
+            );
+
+
+            showToast(
+                "Damage report submitted."
+            );
+
+        }
+    );
+
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+const profileDefaults = {
+
+    name: "Student",
+
+    email: "student@university.edu",
+
+    role: "Student"
+
+};
+
+
+
+function getSavedProfile() {
+
+    try {
+
+        return {
+            ...profileDefaults,
+            ...(JSON.parse(
+                localStorage.getItem(
+                    "sportsyncProfile"
+                )
+            ) || {})
+        };
+
+    } catch {
+
+        return {
+            ...profileDefaults
+        };
+
+    }
+
+}
+
+
+
+function getInitials(name) {
+
+    const words =
+        name
+            .trim()
+            .split(/\s+/)
+            .filter(Boolean);
+
+
+    if (!words.length) {
+
+        return "ST";
+
+    }
+
+
+    return words
+        .slice(0, 2)
+        .map(
+            word =>
+                word[0].toUpperCase()
+        )
+        .join("");
+
+}
+
+
+
+function renderProfile() {
+
+    const profile =
+        getSavedProfile();
+
+
+    document.getElementById(
+        "profileName"
+    ).textContent =
+        profile.name;
+
+
+    document.getElementById(
+        "profileRole"
+    ).textContent =
+        profile.role;
+
+
+    document.getElementById(
+        "profileAvatar"
+    ).textContent =
+        getInitials(
+            profile.name
+        );
+
+}
+
+
+
+function openProfileSettings() {
+
+    const profile =
+        getSavedProfile();
+
+
+    document.getElementById(
+        "profileNameInput"
+    ).value =
+        profile.name;
+
+
+    document.getElementById(
+        "profileEmailInput"
+    ).value =
+        profile.email;
+
+
+    document.getElementById(
+        "profileModal"
+    ).classList.add("show");
+
+
+    document.getElementById(
+        "profileModal"
+    ).setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    setThemeButtons();
+
+}
+
+
+
+function closeProfileSettings() {
+
+    document.getElementById(
+        "profileModal"
+    ).classList.remove("show");
+
+
+    document.getElementById(
+        "profileModal"
+    ).setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+}
+
+
+
+function saveProfileSettings() {
+
+    const name =
+        document
+            .getElementById(
+                "profileNameInput"
+            )
+            .value
+            .trim();
+
+
+    const email =
+        document
+            .getElementById(
+                "profileEmailInput"
+            )
+            .value
+            .trim();
+
+
+    if (!name) {
+
+        showToast(
+            "Please enter your name."
+        );
+
+        return;
+    }
+
+
+    if (
+        email &&
+        !/^\S+@\S+\.\S+$/.test(email)
+    ) {
+
+        showToast(
+            "Please enter a valid email address."
+        );
+
+        return;
+    }
+
+
+    localStorage.setItem(
+        "sportsyncProfile",
+        JSON.stringify({
+
+            name,
+
+            email:
+                email ||
+                profileDefaults.email,
+
+            role:
+                profileDefaults.role
+
+        })
+    );
+
+
+    renderProfile();
+
+    closeProfileSettings();
+
+
+    showToast(
+        "Profile updated successfully."
+    );
+
+}
+
+
+
+/* =====================================================
+   LIGHT / DARK MODE
+===================================================== */
+
+function setTheme(theme) {
+
+    const selectedTheme =
+        theme === "dark"
+            ? "dark"
+            : "light";
+
+
+    document.body.setAttribute(
+        "data-theme",
+        selectedTheme
+    );
+
+
+    localStorage.setItem(
+        "sportsyncTheme",
+        selectedTheme
+    );
+
+
+    setThemeButtons();
+
+}
+
+
+
+function setThemeButtons() {
+
+    const theme =
+        document.body.getAttribute(
+            "data-theme"
+        ) || "light";
+
+
+    document.getElementById(
+        "lightModeBtn"
+    ).classList.toggle(
+        "active",
+        theme === "light"
+    );
+
+
+    document.getElementById(
+        "darkModeBtn"
+    ).classList.toggle(
+        "active",
+        theme === "dark"
+    );
+
+}
+
+
+
+/* =====================================================
+   NOTIFICATIONS
+===================================================== */
+
+function toggleNotifications() {
+
+    const panel =
+        document.getElementById(
+            "notificationPanel"
+        );
+
+
+    panel.classList.toggle(
+        "show"
+    );
+
+}
+
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message) {
+
+    const toast =
+        document.createElement(
+            "div"
+        );
+
+
+    toast.className =
+        "toast";
+
+
+    toast.textContent =
+        message;
+
+
+    document.body.appendChild(
+        toast
+    );
+
+
+    setTimeout(
+        () => {
+
+            toast.classList.add(
+                "show"
+            );
+
+        },
+        30
+    );
+
+
+    setTimeout(
+        () => {
+
+            toast.classList.remove(
+                "show"
+            );
+
+
+            setTimeout(
+                () => toast.remove(),
+                300
+            );
+
+        },
+        2500
+    );
+
+}
+
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+function formatDate(dateString) {
+
+    if (!dateString) {
+
+        return "Today";
+
+    }
+
+
+    const date =
+        new Date(
+            dateString + "T00:00:00"
+        );
+
+
+    return date.toLocaleDateString(
+        "en-IN",
+        {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+
+const today =
+    new Date();
+
+
+document.getElementById(
+    "todayDate"
+).textContent =
+    today.toLocaleDateString(
+        "en-IN",
+        {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+
+
+document.getElementById(
+    "returnDate"
+).value =
+    today
+        .toISOString()
+        .split("T")[0];
+
+
+
+/* =====================================================
+   LOAD SAVED SETTINGS
+===================================================== */
+
+const savedTheme =
+    localStorage.getItem(
+        "sportsyncTheme"
+    ) || "light";
+
+
+setTheme(savedTheme);
+
+renderProfile();
+
+updateAvailabilityUI();
+
+
+</script>
+
 </body>
-
 </html>
